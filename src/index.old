@@ -1,0 +1,43 @@
+// export interface Env {
+// 	PSCALE_HOST: string
+// 	PSCALE_USERNAME: string
+// 	PSCALE_PASSWORD: string
+// }
+
+// import { connect } from '@planetscale/database'
+//
+// addEventListener('fetch', (event) => {
+// 	event.respondWith(
+// 		handleRequest(event.request)
+// 			.catch((err) => new Response(err.stack, { status: 500 }))
+// 	)
+// })
+//
+// async function handleRequest(request: Request, env: Env) {
+// 	const { pathname } = new URL(request.url);
+//
+// 	const config = {
+// 		host: env.PSCALE_HOST,
+// 		username: env.PSCALE_USERNAME,
+// 		password: env.PSCALE_PASSWORD
+// 	}
+//
+// 	if (pathname.startsWith("/api")) {
+// 		const conn = connect(config)
+// 		return new Response(JSON.stringify({ pathname }), {
+// 			headers: { "Content-Type": "application/json" },
+// 		});
+// 	}
+//
+// 	if (pathname.startsWith("/status")) {
+// 		const httpStatusCode = Number(pathname.split("/")[2]);
+//
+// 		return Number.isInteger(httpStatusCode)
+// 			? fetch("https://http.cat/" + httpStatusCode)
+// 			: new Response("That's not a valid HTTP status code.");
+// 	}
+//
+// 	return new Response(`Hello world from request method: ${request.method}`);
+// }
+//
+//
